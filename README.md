@@ -2,14 +2,77 @@
 
 Challenge: A directory contains multiple files and directories of non-uniform file and directory names. Create a program that traverses a base directory and creates an index file that can be used to quickly lookup files by name, size, and content type.
 
-# Instructions
+# Usage
 
-Fork this repository and implement the above requirements. The result must be an application that implements both the index and search features. Use your best judgement as to the interface that is used to use the index and search features, but remember that this is meant to create a dialog during the interview process, not be something that would be used in production.
+<u>**Start the script**</u>
+```
+sh files.sh 
+```
 
-Feel free to use the language, libraries, and tools that you are most comfortable in and best reflect your ability to translate requirements into a functional implementation.
+List files by Size.
+Files can be search by exact size, less than and greater than size. 
 
-Once the project is implemented, remove the `# Instructions` section of this readme and add the section `# Usage` with instructions on how to run the produced application.
+<u>**Example find file equal to 167k**</u>
+```
+1. List files by size
+2. List files by name
+3. Search for files with a given extension
+4. Exit
+Enter your choice: 
+1
+Listing files by size
+Enter file size: 
+167k 
+========================
+-rw-r--r-- 1 root root 167K Jul 11 01:11 test_data/random-forest.png
+```
 
-The `test_data` directory in this project contains files and directories that can be used to test your implementation.
+<u>**Example find file greater than 19k**</u>
+```
+1. List files by size
+2. List files by name
+3. Search for files with a given extension
+4. Exit
+Enter your choice: 
+1
+Listing files by size
+Enter file size: 
++19k
 
-Good luck.
+========================
+-rw-r--r-- 1 root root 20K Jul 11 01:11 test_data/linear-regression-plot.jpg
+-rw-r--r-- 1 root root 167K Jul 11 01:11 test_data/random-forest.png
+```
+
+<u>**List files by name**</u>
+```
+1. List files by size
+2. List files by name
+3. Search for files with a given extension
+4. Exit
+Enter your choice: 
+2
+Listing files by name
+Enter file name: 
+user1.json
+
+========================
+test_data/data/user1.json
+```
+
+<u>**List files by extension**</u>
+```
+1. List files by size
+2. List files by name
+3. Search for files with a given extension
+4. Exit
+Enter your choice: 
+3
+Search for files with a given extension
+Enter file extension: 
+json
+
+========================
+test_data/data/user1.json
+test_data/data/user2.json
+```
